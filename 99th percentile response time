@@ -1,0 +1,15 @@
+
+import re
+
+#regex=r'\S+'
+regex=r'\s\d+'
+x1=[]
+with open('log') as fp:
+    for line in fp:
+        x=re.findall(regex,line)
+        #print x
+        x1.append(int(x[0]))
+x1.sort()
+#print len(x1)
+value=0.99*(len(x1)+1)
+print x1[int(value-1)]
