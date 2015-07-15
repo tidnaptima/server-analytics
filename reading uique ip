@@ -1,0 +1,21 @@
+import re
+a=[]
+val=0
+regex = r'([\d.]+)'
+with open('log2.log') as fp:
+    for line in fp:
+        x=re.findall(regex,line)
+        if not a:
+            a.append([x[0],1])
+        else:
+            for j in a:
+                if j[0]==x[0]:
+                    j[1]+=1
+                    val=1
+            if val==0:
+                a.append([x[0],1])
+        val=0    
+print a        
+                
+
+
